@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbgiwlerln3y2"]
+
+[ext_resource type="Script" path="res://Dragable_Word.gd" id="1_6ybmv"]
+
+[node name="Dragable_Word" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Floaty Word"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_6ybmv")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
