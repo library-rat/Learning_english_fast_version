@@ -7,6 +7,8 @@ var guess_array : Array
 func _ready():
 	guess_array = get_tree().get_nodes_in_group("Guess_words")
 	print(guess_array)
+	$CharacterBody2D/CollisionShape2D.shape.size = size
+	$CharacterBody2D.position = size/2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,3 +25,6 @@ func _on_panel_gui_input(event):
 		for empty_word in guess_array :
 			if (global_position+size/2).distance_to(empty_word.global_position + empty_word.size/2) < (empty_word as Guess_Word).distancemin :
 				print("I'm in")
+
+func create_curve() :
+	pass
