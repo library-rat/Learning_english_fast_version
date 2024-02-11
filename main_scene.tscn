@@ -10,6 +10,14 @@ height = 1008.0
 
 [node name="Main_Scene" type="Node2D"]
 
+[node name="WordRestArea" type="Area2D" parent="." groups=["Rest_word_Area"]]
+position = Vector2(586, 192)
+rotation = 1.5708
+script = ExtResource("3_2qxgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WordRestArea"]
+shape = SubResource("CapsuleShape2D_hrpbi")
+
 [node name="Dragable_Word" parent="." instance=ExtResource("1_wjt6h")]
 
 [node name="Dragable_Word2" parent="." instance=ExtResource("1_wjt6h")]
@@ -25,13 +33,5 @@ offset_top = 313.0
 offset_right = 390.0
 offset_bottom = 336.0
 text = "ohoihrgoie"
-
-[node name="WordRestArea" type="Area2D" parent="." groups=["Rest_word_Area"]]
-position = Vector2(586, 192)
-rotation = 1.5708
-script = ExtResource("3_2qxgc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WordRestArea"]
-shape = SubResource("CapsuleShape2D_hrpbi")
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]

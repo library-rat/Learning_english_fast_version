@@ -3,6 +3,10 @@
 [ext_resource type="Script" path="res://Dragable_Word.gd" id="1_6ybmv"]
 
 [sub_resource type="Curve2D" id="Curve2D_bltgq"]
+_data = {
+"points": PackedVector2Array(0, 0, 150, 50, 0, 0, -100, 0, 100, 0, 300, 100, -150, -50, 0, 0, 600, 0)
+}
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bay0q"]
 
@@ -27,6 +31,7 @@ grow_vertical = 2
 curve = SubResource("Curve2D_bltgq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotation = 0.321751
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
