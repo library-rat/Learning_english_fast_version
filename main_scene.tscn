@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpna0op8rynyd"]
+[gd_scene load_steps=3 format=3 uid="uid://dpna0op8rynyd"]
 
 [ext_resource type="PackedScene" uid="uid://cbgiwlerln3y2" path="res://dragable_word.tscn" id="1_wjt6h"]
+[ext_resource type="PackedScene" uid="uid://dhu6wbwe4i0el" path="res://guess_word.tscn" id="2_q00og"]
 
 [node name="Main_Scene" type="Node2D"]
 
 [node name="Dragable_Word" parent="." instance=ExtResource("1_wjt6h")]
+
+[node name="Dragable_Word2" parent="." instance=ExtResource("1_wjt6h")]
+offset_left = 730.0
+offset_top = 22.0
+offset_right = 823.0
+offset_bottom = 45.0
+
+[node name="Guess_word" parent="." instance=ExtResource("2_q00og")]
+offset_left = 370.0
+offset_top = 313.0
+offset_right = 390.0
+offset_bottom = 336.0
+text = "ohoihrgoie"
