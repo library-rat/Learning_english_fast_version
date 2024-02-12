@@ -11,4 +11,4 @@ func _process(delta):
 
 
 func _on_body_exited(body):
-	print ("out")
+	body.exit_word_rest_area()

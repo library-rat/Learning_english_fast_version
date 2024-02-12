@@ -4,7 +4,7 @@ var selectionne : bool = false
 # Called when the node enters the scene tree for the first time.
 var guess_array : Array
 var rest_area : Area2D
-
+signal rest_area_exited()
 @export var speed :int = 200
 
 func _ready():
@@ -14,8 +14,8 @@ func _ready():
 	if lst_rest_area.size() >0 :
 		rest_area = lst_rest_area[0]
 		create_curve()
-	$CharacterBody2D/CollisionShape2D.shape.size = size
-	$CharacterBody2D.position = size/2
+	$Drad_word_body/CollisionShape2D.shape.size = size
+	$Drad_word_body.position = size/2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,3 +49,7 @@ func create_curve() :
 	return new_curve
 	
 	
+
+
+func _on_drad_word_body_exited_rest_area():
+	emit_signal("rest_area_exited")

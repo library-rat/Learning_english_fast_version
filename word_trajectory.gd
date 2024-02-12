@@ -12,5 +12,9 @@ func _physics_process(delta):
 	print($Follower.position)
 	if $Follower.progress_ratio == 1 :
 		curve = Dragable_word.create_curve()
-		position = Dragable_word.position
 		$Follower.progress_ratio = 0
+
+
+func _on_dragable_word_rest_area_exited():
+	curve = Dragable_word.create_curve()
+	$Follower.progress_ratio = 0
