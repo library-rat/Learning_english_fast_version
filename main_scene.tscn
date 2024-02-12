@@ -28,9 +28,9 @@ offset_bottom = 45.0
 text = "Floaty Word2"
 
 [node name="Guess_word" parent="." instance=ExtResource("2_q00og")]
-offset_left = 370.0
+offset_left = 338.0
 offset_top = 313.0
-offset_right = 390.0
+offset_right = 422.0
 offset_bottom = 336.0
 text = "ohoihrgoie"
 

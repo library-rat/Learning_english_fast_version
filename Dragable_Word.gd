@@ -5,6 +5,8 @@ var selectionne : bool = false
 var guess_array : Array
 var rest_area : Area2D
 
+@export var speed :int = 200
+
 func _ready():
 	randomize()
 	guess_array = get_tree().get_nodes_in_group("Guess_words")
@@ -20,7 +22,9 @@ func _ready():
 func _physics_process(delta):
 	if selectionne :
 		global_position = lerp(global_position, get_global_mouse_position() - size/2 ,25*delta)
-
+	else: 
+		$Path2D/PathFollow2D.set_progress(delta*speed + $Path2D/PathFollow2D.get_progress())
+		print ($Path2D/PathFollow2D.progress)
 
 func _on_panel_gui_input(event):
 	if Input.is_action_just_pressed("Left_click") :

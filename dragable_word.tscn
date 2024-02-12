@@ -33,6 +33,10 @@ curve = SubResource("Curve2D_bltgq")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 rotation = 0.321751
 
+[node name="Panel" type="Panel" parent="Path2D/PathFollow2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
