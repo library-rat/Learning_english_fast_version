@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpna0op8rynyd"]
 
-[ext_resource type="PackedScene" uid="uid://cbgiwlerln3y2" path="res://dragable_word.tscn" id="1_wjt6h"]
 [ext_resource type="PackedScene" uid="uid://dhu6wbwe4i0el" path="res://guess_word.tscn" id="2_q00og"]
 [ext_resource type="Script" path="res://WordRestArea.gd" id="3_2qxgc"]
+[ext_resource type="PackedScene" uid="uid://b6ua6x457scph" path="res://word_trajectory.tscn" id="3_bff4i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrpbi"]
 radius = 148.0
@@ -18,20 +18,13 @@ script = ExtResource("3_2qxgc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WordRestArea"]
 shape = SubResource("CapsuleShape2D_hrpbi")
 
-[node name="Dragable_Word" parent="." instance=ExtResource("1_wjt6h")]
-
-[node name="Dragable_Word2" parent="." instance=ExtResource("1_wjt6h")]
-offset_left = 730.0
-offset_top = 22.0
-offset_right = 823.0
-offset_bottom = 45.0
-text = "Floaty Word2"
-
 [node name="Guess_word" parent="." instance=ExtResource("2_q00og")]
 offset_left = 338.0
 offset_top = 313.0
 offset_right = 422.0
 offset_bottom = 336.0
 text = "ohoihrgoie"
+
+[node name="Word_trajectory" parent="." instance=ExtResource("3_bff4i")]
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]

@@ -1,5 +1,5 @@
 extends Label
-
+class_name Dragable_Word
 var selectionne : bool = false
 # Called when the node enters the scene tree for the first time.
 var guess_array : Array
@@ -22,9 +22,6 @@ func _ready():
 func _physics_process(delta):
 	if selectionne :
 		global_position = lerp(global_position, get_global_mouse_position() - size/2 ,25*delta)
-	else: 
-		$Path2D/PathFollow2D.set_progress(delta*speed + $Path2D/PathFollow2D.get_progress())
-		print ($Path2D/PathFollow2D.progress)
 
 func _on_panel_gui_input(event):
 	if Input.is_action_just_pressed("Left_click") :
@@ -39,7 +36,7 @@ func create_curve() :
 	if rest_area == null :
 		return
 	var new_curve = Curve2D.new()
-	var first_point : Vector2 = Vector2.ZERO
+	var first_point : Vector2 = global_position
 	var second_point : Vector2 = (rest_area.global_position ) - (global_position -size/2) 
 	var third_x : int = randi_range(0,get_viewport().size.x)
 	var third_y : int = randi_range(0,get_viewport().size.y) 
@@ -49,6 +46,6 @@ func create_curve() :
 	new_curve.add_point(second_point, (third_point - first_point)/2, (first_point- third_point)/2)
 	new_curve.add_point(third_point,(third_point -second_point)/2, Vector2.ZERO)
 	
-	$Path2D.curve = new_curve
+	return new_curve
 	
 	

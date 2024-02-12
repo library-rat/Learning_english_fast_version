@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6ua6x457scph"]
+
+[ext_resource type="Script" path="res://word_trajectory.gd" id="1_0vdn4"]
+[ext_resource type="PackedScene" uid="uid://cbgiwlerln3y2" path="res://dragable_word.tscn" id="2_dm1h1"]
+
+[sub_resource type="Curve2D" id="Curve2D_dgeeq"]
+
+[node name="Word_trajectory" type="Path2D"]
+curve = SubResource("Curve2D_dgeeq")
+script = ExtResource("1_0vdn4")
+
+[node name="Follower" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Dragable_Word" parent="Follower" instance=ExtResource("2_dm1h1")]
