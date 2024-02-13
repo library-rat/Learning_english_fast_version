@@ -8,13 +8,19 @@ func _ready():
 
 # Called every frame. 'delta' is the² elapsed time since the previous frame.
 func _physics_process(delta):
-	$Follower.progress +=  Dragable_word.speed*delta
-	print($Follower.position)
-	if $Follower.progress_ratio == 1 :
-		curve = Dragable_word.create_curve()
-		$Follower.progress_ratio = 0
+	if Dragable_word.selectionne == false :
+		$Follower.progress +=  Dragable_word.speed*delta
+		print($Follower.position)
+		if $Follower.progress_ratio == 1 :
+			curve = Dragable_word.create_curve()
+			$Follower.progress_ratio = 0
 
 
 func _on_dragable_word_rest_area_exited():
 	curve = Dragable_word.create_curve()
 	$Follower.progress_ratio = 0
+
+
+func _on_dragable_word_just_released():
+	curve = Dragable_word.create_curve()
+	Dragable_word.position = Vector2.ZERO

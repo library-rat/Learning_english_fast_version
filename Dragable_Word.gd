@@ -5,6 +5,7 @@ var selectionne : bool = false
 var guess_array : Array
 var rest_area : Area2D
 signal rest_area_exited()
+signal just_released()
 @export var speed :int = 200
 
 func _ready():
@@ -28,6 +29,7 @@ func _on_panel_gui_input(event):
 		selectionne = true
 	elif Input.is_action_just_released("Left_click") :
 		selectionne = false
+		emit_signal("just_released")
 		for empty_word in guess_array :
 			if (global_position+size/2).distance_to(empty_word.global_position + empty_word.size/2) < (empty_word as Guess_Word).distancemin :
 				print("I'm in")
@@ -42,7 +44,7 @@ func create_curve() :
 	var third_y : int = randi_range(0,get_viewport().size.y) 
 	var third_point = Vector2(third_x,third_y)
 	
-	new_curve.add_point(first_point, Vector2.ZERO,(second_point-first_point)/2)
+	new_curve.add_point(first_point, position,(second_point-first_point)/2)
 	new_curve.add_point(second_point, (third_point - first_point)/2, (first_point- third_point)/2)
 	new_curve.add_point(third_point,(third_point -second_point)/2, Vector2.ZERO)
 	
