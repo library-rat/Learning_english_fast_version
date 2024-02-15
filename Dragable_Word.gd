@@ -4,8 +4,11 @@ var selectionne : bool = false
 # Called when the node enters the scene tree for the first time.
 var guess_array : Array
 var rest_area : Area2D
+
 signal rest_area_exited()
-signal just_released()
+signal generate_curve()
+signal start_moving()
+signal stop_moving ()
 @export var speed :int = 200
 
 func _ready():
@@ -29,10 +32,11 @@ func _on_panel_gui_input(event):
 		selectionne = true
 	elif Input.is_action_just_released("Left_click") :
 		selectionne = false
-		emit_signal("just_released")
+		emit_signal("generate_curve")
 		for empty_word in guess_array :
-			if (global_position+size/2).distance_to(empty_word.global_position + empty_word.size/2) < (empty_word as Guess_Word).distancemin :
-				print("I'm in")
+			print((global_position+size/2).distance_to(empty_word.global_position))
+			if (global_position+size/2).distance_to(empty_word.global_position) < (empty_word as Guess_Word).distancemin :
+				(empty_word as Guess_Word).set_word(self)
 
 func create_curve() :
 	if rest_area == null :
@@ -49,9 +53,13 @@ func create_curve() :
 	new_curve.add_point(third_point,(third_point -second_point)/2, Vector2.ZERO)
 	
 	return new_curve
-	
-	
-
 
 func _on_drad_word_body_exited_rest_area():
 	emit_signal("rest_area_exited")
+
+func start():
+	emit_signal("generate_curve")
+	emit_signal("start_moving")
+
+func stop():
+	emit_signal("stop_moving")

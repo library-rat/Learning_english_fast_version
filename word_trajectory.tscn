@@ -15,5 +15,7 @@ loop = false
 
 [node name="Dragable_Word" parent="Follower" instance=ExtResource("2_dm1h1")]
 
-[connection signal="just_released" from="Follower/Dragable_Word" to="." method="_on_dragable_word_just_released"]
+[connection signal="generate_curve" from="Follower/Dragable_Word" to="." method="_on_dragable_word_generate_curve"]
 [connection signal="rest_area_exited" from="Follower/Dragable_Word" to="." method="_on_dragable_word_rest_area_exited"]
+[connection signal="start_moving" from="Follower/Dragable_Word" to="." method="_on_dragable_word_start_moving"]
+[connection signal="stop_moving" from="Follower/Dragable_Word" to="." method="_on_dragable_word_stop_moving"]
