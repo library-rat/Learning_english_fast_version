@@ -32,6 +32,7 @@ func _on_panel_gui_input(event):
 		selectionne = true
 	elif Input.is_action_just_released("Left_click") :
 		selectionne = false
+		start()
 		emit_signal("generate_curve")
 		for empty_word in guess_array :
 			print((global_position+size/2).distance_to(empty_word.global_position))

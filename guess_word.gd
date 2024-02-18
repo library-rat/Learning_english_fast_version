@@ -7,16 +7,23 @@ func _ready():
 	pass
 	
 func _draw ():
-	print(distancemin)
 	if word == null:
 		draw_circle(Vector2.ZERO, distancemin, Color.WHITE)
+		var rect = Rect2(Vector2(-distancemin, -distancemin), Vector2(2*distancemin, 2*distancemin))
+		draw_rect(rect,Color.WHITE, false,3)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func set_word(new_word : Dragable_Word):
 	print("ok")
-	word == new_word
+	word = new_word
 	word.stop()
+	word.connect("start_moving", clean_word)
+	queue_redraw()
+	
+func clean_word():
+	word.disconnect("start_moving",clean_word)
+	word = null
 	queue_redraw()
 	
