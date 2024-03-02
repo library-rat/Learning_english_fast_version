@@ -3,9 +3,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var data1
-	var data2
-	var data3
+	var vocab_level : int
+	var conj_level : int
+	var gram_level : int
 	#var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 
 	#var node_data = {
@@ -45,16 +45,35 @@ func _ready():
 
 		# Get the data from the JSON object
 		var node_data = json.get_data()
-
+		vocab_level = node_data["vocab"]
+		conj_level = node_data["conj"]
+		gram_level = node_data["gram"]
 		# Now we set the remaining variables.
-		for i in node_data.keys():
-			self.set(i, node_data[i])
-			print(i)
-			print(node_data[i])
-		print(data1)
-		print(data2)
-		print(data3)
-		print("end of data")
+		$VBoxContainer/Vocabulaire/Quota.text = str(vocab_level)+"/10"
+		$VBoxContainer/Conjugaison/Quota.text = str(conj_level)+"/10"
+		$VBoxContainer/Grammaire/Quota.text = str(gram_level)+"/10"
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func save_game():
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	for node in save_nodes:
+		# Check the node is an instanced scene so it can be instanced again during load.
+		if node.scene_file_path.is_empty():
+			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
+			continue
+
+		# Check the node has a save function.
+		if !node.has_method("save"):
+			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			continue
+
+		# Call the node's save function.
+		var node_data = node.call("save")
+
+		# JSON provides a static method to serialized JSON string.
+		var json_string = JSON.stringify(node_data)
+
+		# Store the save dictionary as a new line in the save file.
+		save_game.store_line(json_string)
