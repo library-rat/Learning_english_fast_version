@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpna0op8rynyd"]
+[gd_scene load_steps=5 format=3 uid="uid://dpna0op8rynyd"]
 
 [ext_resource type="PackedScene" uid="uid://dhu6wbwe4i0el" path="res://guess_word.tscn" id="2_q00og"]
 [ext_resource type="Script" path="res://WordRestArea.gd" id="3_2qxgc"]
 [ext_resource type="PackedScene" uid="uid://b6ua6x457scph" path="res://word_trajectory.tscn" id="3_bff4i"]
-[ext_resource type="PackedScene" uid="uid://cbgiwlerln3y2" path="res://dragable_word.tscn" id="4_j7m2a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrpbi"]
 radius = 148.0
@@ -19,16 +18,15 @@ script = ExtResource("3_2qxgc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WordRestArea"]
 shape = SubResource("CapsuleShape2D_hrpbi")
 
-[node name="Guess_word" parent="." instance=ExtResource("2_q00og")]
-position = Vector2(555, 526)
-
 [node name="Word_trajectory" parent="." instance=ExtResource("3_bff4i")]
 
-[node name="Dragable_Word" parent="." instance=ExtResource("4_j7m2a")]
-offset_left = 972.0
-offset_top = 177.0
-offset_right = 1065.0
-offset_bottom = 200.0
-text = "Floaty Word 2"
+[node name="Guess_word" parent="." instance=ExtResource("2_q00og")]
+position = Vector2(304, 526)
+
+[node name="Guess_word2" parent="." instance=ExtResource("2_q00og")]
+position = Vector2(581, 527)
+
+[node name="Guess_word3" parent="." instance=ExtResource("2_q00og")]
+position = Vector2(886, 540)
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]
