@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbgiwlerln3y2"]
+[gd_scene load_steps=5 format=3 uid="uid://cbgiwlerln3y2"]
 
 [ext_resource type="Script" path="res://Dragable_Word.gd" id="1_6ybmv"]
 [ext_resource type="Script" path="res://Drad_word_body.gd" id="2_5sb5h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jv5id"]
+font_size = 40
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bay0q"]
 
@@ -9,6 +12,7 @@
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Floaty Word"
+label_settings = SubResource("LabelSettings_jv5id")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_6ybmv")

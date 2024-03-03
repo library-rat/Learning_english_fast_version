@@ -16,7 +16,8 @@ func _process(delta):
 	pass
 
 func set_word(new_word : Dragable_Word):
-	print("ok")
+	if word != null :
+		word.start()
 	word = new_word
 	word.stop()
 	word.connect("start_moving", clean_word)
