@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://guess_manager.gd" id="1_4q543"]
 
 [node name="Guess_Manager" type="Node2D"]
+position = Vector2(0, 151)
 script = ExtResource("1_4q543")

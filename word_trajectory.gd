@@ -19,7 +19,8 @@ func _physics_process(delta):
 			$Follower.progress_ratio = 0
 
 
-
+func assign_word(word : String):
+	$Follower/Dragable_Word.text = word
 
 func _on_dragable_word_generate_curve():
 	curve = Dragable_word.create_curve()
