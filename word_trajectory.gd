@@ -4,7 +4,7 @@ extends Path2D
 var is_stopped: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	curve = Dragable_word.create_curve()
+	curve = Dragable_word.create_first_curve()	
 
 
 # Called every frame. 'delta' is the² elapsed time since the previous frame.

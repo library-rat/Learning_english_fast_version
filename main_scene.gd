@@ -1,9 +1,10 @@
-extends Node2D
+extends Node
 
 var word_scene = load("res://word_trajectory.tscn")
 var word_list
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$UI/MarqueurTemps.set_time("Présent")
 	for word in word_list :
 		var new_word = word_scene.instantiate()
 		new_word.assign_word(word)

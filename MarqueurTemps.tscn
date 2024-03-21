@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfw1m1ew6kyg0"]
+
+[ext_resource type="Script" path="res://MarqueurTemps.gd" id="1_7ydon"]
+[ext_resource type="Texture2D" uid="uid://bivcu7ai4587i" path="res://assets/Chrono_outside.png" id="2_i0ggk"]
+[ext_resource type="Texture2D" uid="uid://xj1plldkw7op" path="res://assets/Chrono_inside.png" id="3_4fpyx"]
+
+[node name="MarqueurTemps" type="HBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 35.0
+offset_right = -29.0
+offset_bottom = 75.0
+grow_horizontal = 0
+script = ExtResource("1_7ydon")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Temps : "
+
+[node name="Horloge" type="TextureProgressBar" parent="."]
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+texture_under = ExtResource("2_i0ggk")
+texture_progress = ExtResource("3_4fpyx")

@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpna0op8rynyd"]
+[gd_scene load_steps=6 format=3 uid="uid://dpna0op8rynyd"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_mqdla"]
 [ext_resource type="Script" path="res://WordRestArea.gd" id="3_2qxgc"]
 [ext_resource type="PackedScene" uid="uid://dutduxxp7b2rp" path="res://guess_manager.tscn" id="3_8632v"]
+[ext_resource type="PackedScene" uid="uid://dsk550tvjvbjk" path="res://ui.tscn" id="4_ky3ji"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrpbi"]
 radius = 148.0
 height = 1008.0
 
-[node name="Main_Scene" type="Node2D"]
+[node name="Main_Scene" type="Node"]
 script = ExtResource("1_mqdla")
 
 [node name="WordRestArea" type="Area2D" parent="." groups=["Rest_word_Area"]]
@@ -21,6 +22,8 @@ shape = SubResource("CapsuleShape2D_hrpbi")
 
 [node name="Guess_Manager" parent="." instance=ExtResource("3_8632v")]
 position = Vector2(0, 519)
+
+[node name="UI" parent="." instance=ExtResource("4_ky3ji")]
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]
 [connection signal="list_of_word" from="Guess_Manager" to="." method="_on_guess_manager_list_of_word"]

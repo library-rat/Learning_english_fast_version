@@ -35,7 +35,6 @@ func _on_panel_gui_input(event):
 		start()
 		emit_signal("generate_curve")
 		for empty_word in guess_array :
-			print((global_position+size/2).distance_to(empty_word.global_position))
 			if (global_position+size/2).distance_to(empty_word.global_position) < (empty_word as Guess_Word).distancemin :
 				(empty_word as Guess_Word).set_word(self)
 
@@ -54,6 +53,20 @@ func create_curve() :
 	new_curve.add_point(third_point,(third_point -second_point)/2, Vector2.ZERO)
 	
 	return new_curve
+
+func create_first_curve():
+	if rest_area == null :
+		return
+	var new_curve = Curve2D.new()
+	var first_point : Vector2 = (rest_area.global_position ) - (global_position -size/2) 
+	var second_x : int = randi_range(0,get_viewport().size.x)
+	var second_y : int = randi_range(0,get_viewport().size.y) 
+	var second_point = Vector2(second_x,second_y)
+	
+	new_curve.add_point(first_point, position,(second_point-first_point)/2)
+	new_curve.add_point(second_point,(second_point -first_point)/2, Vector2.ZERO)
+	return new_curve
+	
 
 func _on_drad_word_body_exited_rest_area():
 	emit_signal("rest_area_exited")
