@@ -18,16 +18,19 @@ func _process(delta):
 	pass
 
 func set_word(new_word : Dragable_Word):
+	new_word_set.emit((new_word as Node))
 	if drag_word != null :
 		drag_word.start()
 	drag_word = new_word
 	word = drag_word.text
-	new_word_set.emit((new_word as Node))
 	drag_word.stop()
 	drag_word.connect("start_moving", clean_word)
 	queue_redraw()
 	
 func clean_word():
+	if drag_word == null :
+		print("null")
+		return
 	drag_word.disconnect("start_moving",clean_word)
 	drag_word = null
 	word = ""

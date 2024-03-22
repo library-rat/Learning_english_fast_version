@@ -12,6 +12,9 @@ height = 1008.0
 [node name="Main_Scene" type="Node"]
 script = ExtResource("1_mqdla")
 
+[node name="UI" parent="." instance=ExtResource("4_ky3ji")]
+mouse_filter = 2
+
 [node name="WordRestArea" type="Area2D" parent="." groups=["Rest_word_Area"]]
 position = Vector2(586, 192)
 rotation = 1.5708
@@ -22,8 +25,6 @@ shape = SubResource("CapsuleShape2D_hrpbi")
 
 [node name="Guess_Manager" parent="." instance=ExtResource("3_8632v")]
 position = Vector2(0, 519)
-
-[node name="UI" parent="." instance=ExtResource("4_ky3ji")]
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]
 [connection signal="list_of_word" from="Guess_Manager" to="." method="_on_guess_manager_list_of_word"]

@@ -14,7 +14,9 @@ func _ready():
 	for trap in trap_list :
 		var new_word = trap_scene.instantiate()
 		new_word.assign_word(trap[0])
+		new_word.set_message(trap[1])
 		add_child(new_word)
+	move_child($UI, -1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

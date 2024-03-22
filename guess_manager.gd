@@ -2,7 +2,7 @@ extends Node2D
 
 var guess_word = preload("res://guess_word.tscn")
 var guess_phrase = "I eat pineapple for breakfast"
-var trap_words = [["ate", "C'est du passé LOSER"],["ananas", "Ananas n'est pas transparent"],["She", "Aucun verbe ne corresp"]]
+var trap_words = [["ate", "C'est du passé LOSER"],["ananas", "Ananas n'est pas transparent"],["She", "Aucun verbe ne correspond"]]
 var guess_nodes = []
 signal list_of_word(list)
 signal trap_list(list)
@@ -30,6 +30,9 @@ func set_word(new_word : Node):
 	if new_word.is_in_group("Trap"):
 		trap_answer.emit(new_word.message)
 		print("bloup")
+		for j in range(guess_nodes.size()):
+			guess_nodes[j].clean_word()
+		return
 	var list_word = guess_phrase.split(" ")	
 	for i in range(list_word.size()) :
 		if list_word[i] != guess_nodes[i].word :
