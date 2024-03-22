@@ -1,5 +1,5 @@
 extends Path2D
-
+class_name Word_Trajectory
 @onready var Dragable_word : Dragable_Word = $Follower/Dragable_Word
 var is_stopped: bool = false
 # Called when the node enters the scene tree for the first time.

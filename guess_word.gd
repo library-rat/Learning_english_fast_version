@@ -3,7 +3,7 @@ class_name Guess_Word
 var distancemin: int =  30
 var drag_word : Dragable_Word
 var word : String
-signal new_word_set(node, word)
+signal new_word_set(node :Node)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -22,7 +22,7 @@ func set_word(new_word : Dragable_Word):
 		drag_word.start()
 	drag_word = new_word
 	word = drag_word.text
-	new_word_set.emit(self, word)
+	new_word_set.emit((new_word as Node))
 	drag_word.stop()
 	drag_word.connect("start_moving", clean_word)
 	queue_redraw()

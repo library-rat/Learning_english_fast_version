@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjy46bs7ebuua"]
+
+[ext_resource type="PackedScene" uid="uid://b6ua6x457scph" path="res://word_trajectory.tscn" id="1_235aa"]
+[ext_resource type="Script" path="res://Trap_trajectory.gd" id="2_d6pks"]
+[ext_resource type="Script" path="res://trap_word.gd" id="3_wuka4"]
+
+[node name="Trap_trajectory" instance=ExtResource("1_235aa")]
+script = ExtResource("2_d6pks")
+
+[node name="Dragable_Word" parent="Follower" index="0"]
+script = ExtResource("3_wuka4")
