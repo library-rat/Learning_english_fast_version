@@ -22,19 +22,20 @@ func _enter_tree():
 		add_child(new_guess)
 		guess_nodes.append(new_guess)
 		new_guess.connect("new_word_set", set_word)
+		new_guess.connect("new_trap_set", error_detected)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
 func set_word(new_word : Node):
-	if new_word.is_in_group("Trap"):
-		trap_answer.emit(new_word.message)
-		print("bloup")
-		for j in range(guess_nodes.size()):
-			guess_nodes[j].clean_word()
-		return
 	var list_word = guess_phrase.split(" ")	
 	for i in range(list_word.size()) :
 		if list_word[i] != guess_nodes[i].word :
 			return
 	print("you won")
+
+func error_detected(message : String):
+	trap_answer.emit(message)
+	for j in range(guess_nodes.size()):
+		guess_nodes[j].clean_word()
+	return

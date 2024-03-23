@@ -4,6 +4,7 @@ var distancemin: int =  30
 var drag_word : Dragable_Word
 var word : String
 signal new_word_set(node :Node)
+signal new_trap_set(text :String )
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -18,13 +19,16 @@ func _process(delta):
 	pass
 
 func set_word(new_word : Dragable_Word):
-	new_word_set.emit((new_word as Node))
 	if drag_word != null :
 		drag_word.start()
 	drag_word = new_word
 	word = drag_word.text
 	drag_word.stop()
+	if new_word.is_in_group("Trap"):
+		new_trap_set.emit((new_word as Trap_Word).message)
+		return
 	drag_word.connect("start_moving", clean_word)
+	new_word_set.emit((new_word as Node))
 	queue_redraw()
 	
 func clean_word():
@@ -32,6 +36,7 @@ func clean_word():
 		print("null")
 		return
 	drag_word.disconnect("start_moving",clean_word)
+	drag_word.start()
 	drag_word = null
 	word = ""
 	queue_redraw()
