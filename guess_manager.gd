@@ -1,6 +1,7 @@
 extends Node2D
 
 var guess_word = preload("res://guess_word.tscn")
+var guess_fixed = preload("res://guess_fixed.tscn")
 var guess_phrase = "I eat pineapple for breakfast"
 var trap_words = [["ate", "C'est du passé LOSER"],["ananas", "Ananas n'est pas transparent"],["She", "Aucun verbe ne correspond"]]
 var guess_nodes = []
