@@ -1,0 +1,119 @@
+{
+"Presentation":[
+	
+    {"constant": ["Hi",",", "my", "name", "_" ,"Blabork."],
+	    "answer": "am",
+		"trap": ["is", "are", "have", "has"]},
+    
+        {"constant": ["I","_", "many", "passions", "in", "life."],
+        "answer": "have",
+        "trap": ["is", "are", "am", "has"]
+        },
+        {
+            "constant": ["You","_", "going", "to", "be", "much", "better", "in", "English", "with", "this", "game."],
+            "answer": "are",
+            "trap": ["is", "am", "have", "has"]
+        }
+],
+"Time":[
+    {
+        "constant": ["Today,", "I", "_", "to", "play", "outside."],
+        "answer": "want",
+        "trap": ["wanted", "am wanting", "would be wanting"]
+    },
+    {
+        "constant": ["But", "mom", "_", "not", "here", "to", "watch", "me."],
+        "answer": "is",
+        "trap": ["was", "were", "am", "have been"]
+    },
+    {
+        "constant": ["While", "I", "_", "for", "her,", "the", "mailman", "put", "a", "letter", "in", "the", "mailbox."],
+        "answer": "was waiting",
+        "trap": ["wait", "am waiting", "would wait"]
+    },
+    {
+        "constant": ["And", "here", "we", "are,", "now", "mom", "_", "the", "letter."],
+        "answer": "is reading",
+        "trap": ["read", "was reading", "would read"]
+    }
+],
+"Verb":[
+    {
+        "constant": ["Hi", "professor,", "I", "would", "like", "to", "_", "mathematics.", "Could", "you", "help", "me", "with", "that?"],
+        "answer": "learn",
+        "trap": ["put", "assemble", "know"]
+    },
+    {
+        "constant": ["Really,", "you", "can", "help", "me?", "Awesome,", "where", "do", "I", "_", "."],
+        "answer": "start",
+        "trap": ["build", "jump", "eat"]
+    }    
+],
+"Color" : [
+    {
+        "constant": ["I", "need", "to", "select", "the", "green", "animal.", "_"],
+        "answer": "frog",
+        "trap": ["dog", "cat", "donkey", "whale", "tulip"]
+    },
+    {
+        "constant": ["I", "need", "to", "select", "the", "grey", "animal.", "_"],
+        "answer": "donkey",
+        "trap": ["frog", "dog", "cat", "whale", "tulip"]
+    },
+    {
+        "constant": ["I", "need", "to", "select", "the", "blue", "animal.", "_"],
+        "answer": "whale",
+        "trap": ["frog", "dog", "cat", "donkey", "tulip"]
+    },
+
+    {
+    "constant": ["I", "need", "to", "select", "the", "one", "which", "is", "not", "an", "animal.", "_"],
+    "answer": "tulip",
+    "trap": ["frog", "dog", "cat", "donkey", "whale"]
+}],
+"Culinary":[
+    {
+        "constant": ["If", "it", "is", "breakfast", "I", "may", "eat.", "_"],
+        "answer": "bread & butter",
+        "trap": ["red bean", "meat", "fish", "potatoes", "soda"]
+    },
+    {
+        "constant": ["What", "could", "be", "the", "side", "dish", "if", "I", "eat", "fish.", "_"],
+        "answer": "potatoes",
+        "trap": ["red bean", "bread & butter", "meat", "fish", "soda"]
+    },
+    {
+        "constant": ["If", "I", "consider", "that", "I", "am", "a", "British", "I", "want.", "_"],
+        "answer": "bread & butter",
+        "trap": ["red bean", "meat", "fish", "potatoes", "soda"]
+    },
+    {
+        "constant": ["Choose", "the", "one", "which", "is", "a", "drink.", "_"],
+        "answer": "soda",
+        "trap": ["red bean", "bread & butter", "meat", "fish", "potatoes"]
+    },
+    {
+        "constant": ["Finally,", "the", "best", "cuisine", "comes", "from.", "_"],
+        "answer": "France",
+        "trap": ["France", "France", "France", "France", "France"]
+    }    
+],
+"Culture":[
+    {
+        "constant": ["I", "am", "one", "of", "the", "most", "known", "English", "writer.", "Hamlet", "is", "one", "of", "my", "piece.", "_"],
+        "answer": "William Shakespeare",
+        "trap": ["Arthur Conan Doyle", "George Orwell", "Charles Dickens", "Agatha Christie"]
+    },
+    {
+        "constant": ["People", "always", "call", "me", "Big", "Ben,", "but", "this", "is", "the", "name", "of", "my", "bell.", "My", "real", "name", "is", "the", "_", "."],
+        "answer": "Elizabeth Tower",
+        "trap": ["Eiffel Tower", "Empire State Building", "Pisa Tower", "Fernsehturm"]
+    },
+    {
+        "constant": ["I", "am", "a", "well", "know", "romantic", "painter", "also", "considered", "as", "a", "precursor", "of", "the", "impressionism", "movement.", "_"],
+        "answer": "J. M. W. Turner",
+        "trap": ["Claude Monet", "Eugene Delacroix", "Vincent Van Gogh"]
+    } 
+
+]
+}
