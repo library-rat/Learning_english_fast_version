@@ -9,10 +9,17 @@
 radius = 148.0
 height = 1008.0
 
-[node name="Main_Scene" type="Node"]
+[node name="Main_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mqdla")
 
 [node name="UI" parent="." instance=ExtResource("4_ky3ji")]
+layout_mode = 1
 mouse_filter = 2
 
 [node name="WordRestArea" type="Area2D" parent="." groups=["Rest_word_Area"]]
