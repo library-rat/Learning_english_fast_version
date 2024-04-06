@@ -22,6 +22,9 @@ func load_currentlvl():
 		return
 	else :
 		var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+		var load_string  = save_game.get_line()
+		currentlvl = JSON.parse_string(load_string)
+		print(currentlvl)
 	
 	
 func save_progression():
