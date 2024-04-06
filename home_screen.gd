@@ -6,11 +6,14 @@ var lvlselector = load("res://level_selector.tscn")
 var currentlvl = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	load_currentlvl()
 	for key in json_dict.keys() :
 		var newLvl = lvlselector.instantiate()
 		newLvl.set_value(key)
+		newLvl.set_level(currentlvl[key], json_dict[key].size())
 		$SelectorContainer.add_child(newLvl) 
-	load_currentlvl()
+
+		
 
 
 func load_currentlvl():

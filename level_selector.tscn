@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://level_selector.gd" id="1_xvgir"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ujj75"]
-font_size = 25
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ex14"]
-font_size = 25
+font_size = 32
 outline_size = 1
 
 [node name="LevelSelector" type="HBoxContainer"]
@@ -19,6 +19,8 @@ script = ExtResource("1_xvgir")
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="Panel"]
@@ -35,6 +37,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "9/10"
 label_settings = SubResource("LabelSettings_0ex14")
