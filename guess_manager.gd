@@ -11,10 +11,6 @@ signal trap_list(list)
 signal trap_answer(text :String)
 var ecart : int = 120
 
-func _ready():
-	set_dico_and_launch({"constant": ["You","_", "going", "to", "improve", "in", "English"],
-		"answer": "am",
-		"trap": [["is", "a"], ["are","b"], ["have","c"], ["has","d"]]})
 
 func set_dico_and_launch(dico):
 	const_phrase = dico["constant"]

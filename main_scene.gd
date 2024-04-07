@@ -5,7 +5,19 @@ var trap_scene = load("res://trap_trajectory.tscn")
 var word_list
 var trap_list
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
+	var dico ={"constant": ["You","_", "going", "to", "improve", "in", "English"],
+		"answer": "are",
+		"trap": [["is", "a"], ["am","b"], ["have","c"], ["has","d"]]}
+	set_level(dico)
+
+func set_level(dico):
+	$Guess_Manager.set_dico_and_launch(dico)
+	create_words()
+
+
+func create_words():
 	$UI/MarqueurTemps.set_time("Présent")
 	for word in word_list :
 		var new_word = word_scene.instantiate()
