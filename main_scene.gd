@@ -5,13 +5,9 @@ var trap_scene = load("res://trap_trajectory.tscn")
 var word_list
 var trap_list
 var child_word_lst = []
+signal level_passed()
 # Called when the node enters the scene tree for the first time.
 
-func _ready():
-	var dico ={"constant": ["You","_", "going", "to", "improve", "in", "English"],
-		"answer": "are",
-		"trap": [["is", "a"], ["am","b"], ["have","c"], ["has","d"]]}
-	set_level(dico)
 
 func set_level(dico):
 	$Guess_Manager.set_dico_and_launch(dico)
@@ -57,5 +53,5 @@ func clear():
 
 
 func _on_guess_manager_level_passed():
-	print("bloup")
 	clear()
+	level_passed.emit()

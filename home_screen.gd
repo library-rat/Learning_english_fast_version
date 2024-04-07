@@ -4,6 +4,7 @@ var json_as_text = FileAccess.get_file_as_string("res://assets/text_Jsonified.js
 var json_dict = JSON.parse_string(json_as_text)
 var lvlselector = load("res://level_selector.tscn")
 var currentlvl = {}
+var layout = {}
 signal display_level(dico)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,7 @@ func _ready():
 		newLvl.set_level(currentlvl[key], json_dict[key].size())
 		newLvl.connect( "level_selected", choose_level)
 		$SelectorContainer.add_child(newLvl) 
+		layout[key] = newLvl
 
 		
 
@@ -42,4 +44,9 @@ func choose_level(key : String) -> void :
 	if currentlvl[key] <json_dict[key].size() :
 		print(json_dict[key][currentlvl[key]])
 		display_level.emit(json_dict[key][currentlvl[key]])
+		await $"../Main_Scene".level_passed
+		print("it's alright")
+		currentlvl[key] += 1
+		save_progression()
+		layout[key].set_level(currentlvl[key], json_dict[key].size())
 	
