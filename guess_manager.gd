@@ -10,10 +10,11 @@ signal list_of_word(list)
 signal trap_list(list)
 signal trap_answer(text :String)
 signal level_passed()
-var ecart : int = 120
+var ecart : int = 130
 
 
 func set_dico_and_launch(dico):
+	guess_nodes = []
 	const_phrase = dico["constant"]
 	guess_phrase = dico["answer"]
 	trap_words = dico["trap"]
@@ -22,7 +23,7 @@ func set_dico_and_launch(dico):
 	
 # Called when the node enters the scene tree for the first time.
 func launch():
-	var list_word = guess_phrase.split(" ")
+	var list_word = [guess_phrase]
 	list_of_word.emit(list_word)
 	trap_list.emit(trap_words)
 	var screen_size = get_viewport().get_visible_rect().size.x
@@ -49,13 +50,10 @@ func _process(delta):
 	pass
 	
 func set_word(new_word : Node):
-	var list_word = guess_phrase.split(" ")
-	var num_ans = 0
 	for i in range(const_phrase.size()) :
 		if const_phrase[i] == "_" :
-			if guess_nodes[num_ans].word != list_word[num_ans]:
+			if guess_nodes[0].word != guess_phrase:
 				return
-			num_ans += 1
 	level_passed.emit()
 
 func error_detected(message : String):
@@ -67,3 +65,4 @@ func error_detected(message : String):
 func clear()->void :
 	for i in self.get_children ():
 		i.queue_free()
+

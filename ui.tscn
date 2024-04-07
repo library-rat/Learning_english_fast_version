@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsk550tvjvbjk"]
+[gd_scene load_steps=3 format=3 uid="uid://dsk550tvjvbjk"]
 
 [ext_resource type="Script" path="res://ui.gd" id="1_d53wd"]
-[ext_resource type="PackedScene" uid="uid://dfw1m1ew6kyg0" path="res://MarqueurTemps.tscn" id="1_n18pa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_00yns"]
 font_size = 24
@@ -14,13 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_d53wd")
-
-[node name="MarqueurTemps" parent="." instance=ExtResource("1_n18pa")]
-layout_mode = 1
-offset_left = -155.0
-offset_top = 59.0
-offset_right = -54.0
-offset_bottom = 99.0
 
 [node name="ErrorWindow" type="Panel" parent="."]
 visible = false

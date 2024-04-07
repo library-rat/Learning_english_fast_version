@@ -15,7 +15,6 @@ func set_level(dico):
 
 
 func create_words():
-	$UI/MarqueurTemps.set_time("Présent")
 	for word in word_list :
 		var new_word = word_scene.instantiate()
 		new_word.assign_word(word)
@@ -50,7 +49,7 @@ func clear():
 	$Guess_Manager.clear()
 	for word in child_word_lst :
 		word.queue_free()
-
+	child_word_lst = []
 
 func _on_guess_manager_level_passed():
 	clear()

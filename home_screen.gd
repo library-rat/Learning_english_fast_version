@@ -22,7 +22,6 @@ func _ready():
 
 func load_currentlvl():
 	if not FileAccess.file_exists("user://savegame.save"):
-		
 		for keys in json_dict.keys() :
 			currentlvl[keys] = 0
 		save_progression()
@@ -31,7 +30,10 @@ func load_currentlvl():
 		var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 		var load_string  = save_game.get_line()
 		currentlvl = JSON.parse_string(load_string)
-		print(currentlvl)
+		if currentlvl == {} :
+			for keys in json_dict.keys() :
+				currentlvl[keys] = 0
+				save_progression()
 	
 	
 func save_progression():

@@ -1,119 +1,177 @@
 {
 "Presentation":[
 	
-	{"constant": ["Hi",",", "my", "name", "_" ,"Blabork."],
-		"answer": "is",
-		"trap": [["am", "a"], ["are","b"], ["have","c"], ["has","d"]]},
+{
+	"constant": ["Hi", ",", "my", "name", "_", "Blabork."],
+	"answer": "is",
+	"trap": [
+		["am", "Ce verbe ne correspond pas au pronom \"my name\" qui indique la 3eme personne."],
+		["are", "Ce verbe ne correspond pas au pronom  \"my name\" qui indique la 3eme personne."],
+		["have", "\"Have\" N'est pas utilisable dance ce contexte il faut utiliser\"Be\" ."],
+		["has", "\"Have\" N'est pas utilisable dance ce contexte il faut utiliser\"Be\" ."]
+	]
+}
+
+,
 	
 		{"constant": ["I","_", "many", "passions", "in", "life."],
 		"answer": "have",
-		"trap": ["is", "are", "am", "has"]
+		"trap": [
+		["is","\"Be\" N'est pas utilisable dance ce contexte il faut utiliser\"Have\" ."],
+		["are","\"Be\" N'est pas utilisable dance ce contexte il faut utiliser\"Have\" ."],
+		["am", "\"Be\" N'est pas utilisable dance ce contexte il faut utiliser\"Have\" ."],
+		["has", "Le passé n'est pas adpté ici il faudrait plutôt du présent."]]
 		},
 		{
-			"constant": ["You","_", "going", "to", "be", "much", "better", "in", "English", "with", "this", "game."],
+			"constant": ["You","_", "going", "to", "improve", "your", "English"],
 			"answer": "are",
-			"trap": ["is", "am", "have", "has"]
+			"trap": [
+			["is", "Ce verbe ne correspond pas au pronom  \"You\" qui indique la 2ème personne."]
+			, ["am","Ce verbe ne correspond pas au pronom  \"You\" qui indique la 2ème personne."],
+			[ "have", "\"Have\" N'est pas utilisable dance ce contexte il faut utiliser\"Be\" ."],
+			["has","\"Have\" N'est pas utilisable dance ce contexte il faut utiliser\"Be\" ."]]
 		}
 ],
 "Temps":[
 	{
 		"constant": ["Today,", "I", "_", "to", "play", "outside."],
 		"answer": "want",
-		"trap": ["wanted", "am wanting", "would be wanting"]
+		"trap": [
+		["wanted","Le passé n'est pas en accord avec \" Today\""],
+		["am wanting","Il s'agit d'une tournure étrange, un peu archaïque"],
+		["would be wanting" ,"Il s'agit d'une tournure étrange ici il faut utiliser du présent" ]]
 	},
 	{
 		"constant": ["But", "mom", "_", "not", "here", "to", "watch", "me."],
 		"answer": "is",
-		"trap": ["was", "were", "am", "have been"]
+		"trap": [
+		["will", "\"will\" n'est pas adapté ici il convient d'utiliser \"be\""]
+		, ["were", "La forme ne convient pas avec \"mom\" qui est singulier"],
+		["am", "La 1ère personne ne convient pas avec \"mom\" qui est le sujet"],
+		["have been", "La tournure n'est ici pas correcte avec la négation"]]
 	},
 	{
-		"constant": ["While", "I", "_", "_", "for", "her,", "the", "mailman", "put", "a", "letter", "in", "the", "mailbox."],
+		"constant": ["While", "I", "_", ",I", "watched,", "the", "passing", "clouds"],
 		"answer": "was waiting",
-		"trap": ["wait", "am waiting", "would wait"]
+		"trap": [
+		["wait", "Au présent ne correspond pas à la phrase au passé" ],
+		["am waiting","Au présent ne correspond pas à la phrase au passé" ],
+		["would wait", "Ne correspond pas au contexte de la phrase"] ]
 	},
 	{
 		"constant": ["And", "here", "we", "are,", "now", "mom", "_", "the", "letter."],
 		"answer": "is reading",
-		"trap": ["read", "was reading", "would read"]
+		"trap": [
+		["read", "Elle est en train de le faire, ce n'est pas le bon temps"], 
+		["was reading", "Elle est en train de le faire, ce n'est pas le bon temps"],
+		["would read","Elle est en train de le faire, ce n'est pas le bon temps"]]
 	}
 ],
 "Verbes":[
 	{
-		"constant": ["Hi", "professor,", "I", "would", "like", "to", "_", "mathematics.", "Could", "you", "help", "me", "with", "that?"],
+		"constant": ["Hi",  "I", "would", "like", "to", "_", "physics."],
 		"answer": "learn",
-		"trap": ["put", "assemble", "know"]
+		"trap": [
+		["put", "Le verbe ne fait pas sens dans le contexte actuel"],
+		["assemble","Le verbe ne fait pas sens dans le contexte actuel"],
+		["talk","Le verbe ne fait pas sens dans le contexte actuel"]]
 	},
 	{
-		"constant": ["Really,", "you", "can", "help", "me?", "Awesome,", "where", "do", "I", "_", "."],
+		"constant": ["Great,", "when", "do", "I", "_","working" , "?"],
 		"answer": "start",
-		"trap": ["build", "jump", "eat"]
+		"trap": [["build", "Le verbe ne fait pas sens dans le contexte actuel"]
+		, ["jump","Le verbe ne fait pas sens dans le contexte actuel"],
+		["eat","Le verbe ne fait pas sens dans le contexte actuel"]]
 	}    
 ],
 "Couleurs" : [
 	{
 		"constant": ["I", "need", "to", "select", "the", "green", "animal.", "_"],
 		"answer": "frog",
-		"trap": ["dog", "cat", "donkey", "whale", "tulip"]
+		"trap": [
+		["dog", "Un chien en bonne santé n'est pas vert"],
+		["cat", "Un chat en bonne santé n'est pas vert"],
+		["donkey","Un ane en bonne santé n'est pas vert"],
+		["whale","Une baleine en bonne santé n'est pas verte"],
+		["tulip", "Une tulipe n'est pas un animal"]]
 	},
 	{
-		"constant": ["I", "need", "to", "select", "the", "grey", "animal.", "_"],
-		"answer": "donkey",
-		"trap": ["frog", "dog", "cat", "whale", "tulip"]
+		"constant": ["I", "need", "to", "select", "the", "blue", "one.", "_"],
+		"answer": "Sapphire",
+		"trap": [
+		["Ruby", "Les rubis sont rouges"],
+		["Emerald", "Les émeraudes sont vertes"],
+		["Topaz", "la pierre de topaze est ambrée"],
+		["Diamond", "Les diamants sont rpéutés transparent bien que il en existe de multiples types."]]
 	},
 	{
-		"constant": ["I", "need", "to", "select", "the", "blue", "animal.", "_"],
-		"answer": "whale",
-		"trap": ["frog", "dog", "cat", "donkey", "tulip"]
+		"constant": ["I", "need", "to", "select", "the", "red", "one.", "_"],
+		"answer": "Ruby",
+		"trap": [
+		["Sapphire", "Les saphires sont bleus"],
+		["Emerald", "Les émeraudes sont vertes"],
+		["Topaz", "la pierre de topaze est ambrée"],
+		["Diamond", "Les diamants sont rpéutés transparent bien que il en existe de multiples types."]]
 	},
 
 	{
-	"constant": ["I", "need", "to", "select", "the", "one", "which", "is", "not", "an", "animal.", "_"],
-	"answer": "tulip",
-	"trap": ["frog", "dog", "cat", "donkey", "whale"]
-}],
+		"constant": ["I", "need", "to", "select", "the", "white", "one.", "_"],
+		"answer": "Diamond",
+		"trap": [
+		["Sapphire", "Les saphires sont bleus"],
+		["Emerald", "Les émeraudes sont vertes"],
+		["Topaz", "la pierre de topaze est ambrée"],
+		["Ruby",  "Les rubis sont rouges"]]
+	},
+	{
+		"constant": ["I", "need", "to", "select", "the", "green", "one.", "_"],
+		"answer": "Emerald",
+		"trap": [
+		["Sapphire", "Les saphires sont bleus"],
+		["Ruby", "Les rubis sont rouges"],
+		["Topaz", "la pierre de topaze est ambrée"],
+		["Diamond", "Les diamants sont rpéutés transparent bien que il en existe de multiples types."]]
+	}
+	],
 "Nourriture":[
 	{
-		"constant": ["If", "it", "is", "breakfast", "I", "may", "eat.", "_"],
-		"answer": "bread & butter",
-		"trap": ["red bean", "meat", "fish", "potatoes", "soda"]
-	},
-	{
-		"constant": ["What", "could", "be", "the", "side", "dish", "if", "I", "eat", "fish.", "_"],
+		"constant": ["Side","dish", "to", "serve", "with", "fish.", "_"],
 		"answer": "potatoes",
-		"trap": ["red bean", "bread & butter", "meat", "fish", "soda"]
+		"trap": [
+		["red bean", "Un choix étonnant que des haricots rouges"],
+		["bread & butter","Un choix étonnant que du pain beurré"],
+		["meat","De la viande avec du poisson ?"],
+		["fish", "Alors oui c'est cohérent mais non ce n'est pas ce qui est attendu"],
+		["soda", "Une boisson gazeuse n'est pas considérée comme un accompagnement"] ]
 	},
 	{
-		"constant": ["If", "I", "consider", "that", "I", "am", "a", "British", "I", "want.", "_"],
-		"answer": "bread & butter",
-		"trap": ["red bean", "meat", "fish", "potatoes", "soda"]
-	},
-	{
-		"constant": ["Choose", "the", "one", "which", "is", "a", "drink.", "_"],
-		"answer": "soda",
-		"trap": ["red bean", "bread & butter", "meat", "fish", "potatoes"]
-	},
-	{
-		"constant": ["Finally,", "the", "best", "cuisine", "comes", "from.", "_"],
-		"answer": "France",
-		"trap": ["France", "France", "France", "France", "France"]
-	}    
+		"constant": ["Find", "the", "dish", "from", "Australia", "_"],
+		"answer": "Pavlova",
+		"trap": [
+		["Bread","Le pain n'est pas originaire d'Australie"],
+		["Naan","Les naans ne sont pas originaire d'Australie"],
+		["Sausage","Les saucisses  ne sont pas originaire d'Australie"],
+		["Hamburger", "L'Hamburger n'est pas originaire d'Australie"]]
+	}
 ],
 "Culture":[
 	{
-		"constant": ["I", "am", "one", "of", "the", "most", "known", "English", "writer.", "Hamlet", "is", "one", "of", "my", "piece.", "_"],
+		"constant": [ "Hamlet", "is", "one", "of", "my", "piece.", "_"],
 		"answer": "William Shakespeare",
-		"trap": ["Arthur Conan Doyle", "George Orwell", "Charles Dickens", "Agatha Christie"]
+		"trap": [
+		["Arthur Conan Doyle", "Je suis plutôt connu pour avoir créé Sherlock Holmes"]
+		, ["George Orwell", "Je suis connue pour avoir écrit 1984 et  La ferme des animaux"],
+		["Charles Dickens", "Non je n'ai pas écrit Hamlet"]
+		, ["Agatha Christie", "Je suis plutôt connue pour mes romans policier et le personnage d'Hercule Poirot"]]
 	},
 	{
-		"constant": ["People", "always", "call", "me", "Big", "Ben,", "but", "this", "is", "the", "name", "of", "my", "bell.", "My", "real", "name", "is", "the", "_", "."],
+		"constant": ["The", "true", "name", "of", "Big", "Ben,", "is", "_"],
 		"answer": "Elizabeth Tower",
-		"trap": ["Eiffel Tower", "Empire State Building", "Pisa Tower", "Fernsehturm"]
-	},
-	{
-		"constant": ["I", "am", "a", "well", "know", "romantic", "painter", "also", "considered", "as", "a", "precursor", "of", "the", "impressionism", "movement.", "_"],
-		"answer": "J. M. W. Turner",
-		"trap": ["Claude Monet", "Eugene Delacroix", "Vincent Van Gogh"]
-	} 
-
+		"trap": [
+		["Eiffel Tower", "Mauvaise tour "],
+		["Empire State Building", "Mauvaise tour "],
+		["Pisa Tower", "Mauvaise tour "], 
+		["Fernsehturm", "Mauvaise tour "]]
+	}
 ]
 }
