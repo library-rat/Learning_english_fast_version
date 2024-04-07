@@ -2,8 +2,8 @@
 "Presentation":[
 	
 	{"constant": ["Hi",",", "my", "name", "_" ,"Blabork."],
-		"answer": "am",
-		"trap": ["is", "are", "have", "has"]},
+		"answer": "is",
+		"trap": [["am", "a"], ["are","b"], ["have","c"], ["has","d"]]},
 	
 		{"constant": ["I","_", "many", "passions", "in", "life."],
 		"answer": "have",
@@ -27,7 +27,7 @@
 		"trap": ["was", "were", "am", "have been"]
 	},
 	{
-		"constant": ["While", "I", "_", "for", "her,", "the", "mailman", "put", "a", "letter", "in", "the", "mailbox."],
+		"constant": ["While", "I", "_", "_", "for", "her,", "the", "mailman", "put", "a", "letter", "in", "the", "mailbox."],
 		"answer": "was waiting",
 		"trap": ["wait", "am waiting", "would wait"]
 	},
