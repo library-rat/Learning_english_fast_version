@@ -34,6 +34,7 @@ shape = SubResource("CapsuleShape2D_hrpbi")
 position = Vector2(0, 519)
 
 [connection signal="body_exited" from="WordRestArea" to="WordRestArea" method="_on_body_exited"]
+[connection signal="level_passed" from="Guess_Manager" to="." method="_on_guess_manager_level_passed"]
 [connection signal="list_of_word" from="Guess_Manager" to="." method="_on_guess_manager_list_of_word"]
 [connection signal="trap_answer" from="Guess_Manager" to="." method="_on_guess_manager_trap_answer"]
 [connection signal="trap_list" from="Guess_Manager" to="." method="_on_guess_manager_trap_list"]

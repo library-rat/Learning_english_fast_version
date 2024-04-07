@@ -9,6 +9,7 @@ var guess_nodes = []
 signal list_of_word(list)
 signal trap_list(list)
 signal trap_answer(text :String)
+signal level_passed()
 var ecart : int = 120
 
 
@@ -52,13 +53,17 @@ func set_word(new_word : Node):
 	var num_ans = 0
 	for i in range(const_phrase.size()) :
 		if const_phrase[i] == "_" :
-			if const_phrase[i] != guess_phrase[num_ans]:
+			if guess_nodes[num_ans].word != list_word[num_ans]:
 				return
 			num_ans += 1
-	print("you won")
+	level_passed.emit()
 
 func error_detected(message : String):
 	trap_answer.emit(message)
 	for j in range(guess_nodes.size()):
 		guess_nodes[j].clean_word()
 	return
+
+func clear()->void :
+	for i in self.get_children ():
+		i.queue_free()
