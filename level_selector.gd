@@ -10,9 +10,8 @@ func set_value(value):
 func set_level(current:int, max :int):
 	if current < max :
 		$Label.text = "%d/%d"% [current,max]
-	print(current)
-	print(max)
-	print("%d/%d"%[current ,max])
+	else :
+		$Label.text = "END"
 
 func _on_gui_input(event):
 	if event.is_action_pressed("Left_click"):
